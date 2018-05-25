@@ -1,5 +1,6 @@
 <footer>
-    <p>&copy; Belle Table, 2018 tous droits réservés. | <a href="">partenaires</a> <a href="">contact</a> <a href="">mentions légales</a> <a href="">emplois</a></p>
+    <p>&copy; Belle Table, 2018 tous droits réservés.<br />
+    <a href="">Partenaires</a> | <a href="contact.php">Contact</a> | <a href="mentions_legales.php">Mentions légales</a> | <a href="">Emplois</a></p>
 </footer>
 </body>
 </html>
