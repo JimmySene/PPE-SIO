@@ -1,7 +1,11 @@
 <?php $titrePage = "Accueil";
 include('includes/header.php'); ?>
-<main id="accueil">
-<p>Pierre Bartholi, l’initiateur du projet, âgé de 45 ans à la création de la société et Marc Bartholi frère du créateur, ont décidé de créer leur société en 2010. 
+
+<h1 class="display-4">Présentation de notre entreprise</h1>
+<hr />
+
+<p>
+ Pierre Bartholi, l’initiateur du projet, âgé de 45 ans à la création de la société et Marc Bartholi frère du créateur, ont décidé de créer leur société en 2010. 
 Ils ont choisi de créer un société sous la forme SARL.
 Pierre Bartholi possède 55% des parts sociales à lui seul et son épouse, Martine Bartholi, accompagne son mari et possédera 10% des parts sociales.</p>
 
@@ -33,5 +37,5 @@ supplémentaire, la société BELLETABLE fait appel à un ou plusieurs intérima
 incluant la livraison, la mise en place des tables, l’installation des divers matériels, le service
 à table, lavage de la vaisselle et du linge. Aucune autre société ne propose un service aussi
 complet et haut de gamme avec des articles de la table de luxe.</p>
-</main>
+
 <?php include('includes/footer.php'); ?>

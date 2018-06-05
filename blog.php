@@ -1,7 +1,8 @@
 <?php $titrePage = "Blog";
 include('includes/header.php'); ?>
-<main id="blog">
-    <h1>Blog</h1>
+
+    <h1 class="display-4">Blog</h1>
+    <hr />
     <p>Cette page est en construction. Revenez plus tard.</p>
-</main>
+
 <?php include('includes/footer.php'); ?>

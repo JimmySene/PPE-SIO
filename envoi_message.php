@@ -1,6 +1,6 @@
 <?php include("fonctions.php");
 
-if(isset($_POST['pseudo']))
+if(isset($_POST['email']) && !empty($_POST['email'])  && !empty($_POST['pseudo'])  && !empty($_POST['message'])) // Si infos du formulaire alors envoi d'un message
 {
         $email = $_POST['email'];
         $message = $_POST['message'];
@@ -15,6 +15,6 @@ if(isset($_POST['pseudo']))
         echo "Votre message a bien été envoyé ! Vous allez être redirigé vers la page d'accueil dans quelques secondes...";
         header("Refresh:3;URL=index.php");
 }
-header("location:index.php");
+else header("location:contact.php"); // Sinon renvoi vers la page de contact
 
 ?>

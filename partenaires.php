@@ -1,16 +1,17 @@
 <?php $titrePage = "Partenaires";
 include('includes/header.php'); ?>
-<main id="partenaires">
-    <h1>Nos partenaires</h1>
+
+    <h1 class="display-4">Nos partenaires</h1>
+    <hr />
     <p>Nous remercions nos partenaires pour leur coopération et leur fidélité.</p>
-    <ul>
-        <li>Albi - fournisseur</li>
-        <li>Jardin d'eden - fournisseur</li>
-        <li>Silver time - fournisseur</li>
-        <li>Malmaison - fournisseur</li>
-        <li>Marly - fournisseur</li>
-        <li>Jean Duchmin - organisateur de réception</li>
-        <li>Amandine Chenot - organisatrice de réception</li>
+    <ul class="list-group">
+        <li class="list-group-item">Albi - fournisseur</li>
+        <li class="list-group-item">Jardin d'eden - fournisseur</li>
+        <li class="list-group-item">Silver time - fournisseur</li>
+        <li class="list-group-item">Malmaison - fournisseur</li>
+        <li class="list-group-item">Marly - fournisseur</li>
+        <li class="list-group-item">Jean Duchmin - organisateur de réception</li>
+        <li class="list-group-item">Amandine Chenot - organisatrice de réception</li>
     </ul>
-</main>
+
 <?php include('includes/footer.php'); ?>

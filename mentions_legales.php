@@ -1,8 +1,8 @@
 <?php $titrePage = "Mentions légales";
 include('includes/header.php'); ?>
-<main id="mentions_legales">
 
-<p>Le site Belle Table est un site édité par J&T Developpement dans le but de présenter l'activité et les services de l'entreprise Belle Table. Pour plus dinformations, merci de visiter la page « À Propos ».</p>
+
+<p>Le site Belle Table est un site édité par J&T Developpement dans le but de présenter l'activité et les services de l'entreprise Belle Table.</p>
 
 			<h2>CONTACT</h2>
 			<p>Vous pouvez contacter Belle Table par mail via la page de contact.</p>
@@ -27,6 +27,6 @@ include('includes/header.php'); ?>
 			Si vous participez à un programme à abonnement, vous pouvez à tout moment l’annuler via votre compte Paypal, dans vos préférences de règlement. Lorsqu’une garantie est proposée en cas d’absence de résultats lors de la vidéo de présentation d’un produit, celle-ci est uniquement valide dans un délai de 90 jours maximum. Sans précision de durée lors de la vidéo de présentation du produit, celle-ci sera automatiquement de 30 jours.</p>
 			<h2>RÈGLEMENT SÉCURISÉ</h2>
 			<p>Le paiement des formations et programmes se fait grâce au leader mondial du paiement en ligne Paypal. Les règlements sont sécurisés et en cas de questions vous pouvez me contacter directement par email dans le section contact ou via l’espace membre si vous participez déjà à un programme.</p>
-        </div>
-</main>
+        
+
 <?php include('includes/footer.php'); ?>
