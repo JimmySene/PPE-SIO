@@ -26,16 +26,16 @@ if(isset($_POST['email']) && !empty($_POST['email']) && !empty($_POST['mdp']) &&
             $req = "INSERT INTO  client(adresse_mail, mot_de_passe, civilite, nom, prenom, adresse, ville, code_postal, telephone ) VALUES('$email','$mdp','$civilite', '$nom', '$prenom', '$adresse', '$ville', '$cp', '$tel')";
             $data = mysqli_query($con, $req);
 
-            echo "Votre compte a bien été créé. Vous allez être redirigé sur la page d'accueil dans quelques secondes...";
+            echo '<p class="alert alert-success">Votre compte a bien été créé. Vous allez être redirigé sur la page d\'accueil dans quelques secondes...</p>';
             header("refresh:3;url=index.php");
         }
         else // Sinon on affiche un message d'erreur et on renvoie sur le formulaire d'inscription
         {
-            echo "Erreur : Les 2 mots de passes ne correspondent pas. Vous allez être redirigé sur le formulaire d'inscription dans quelques secondes...";
+            echo '<p class="alert alert-danger">Erreur : Les 2 mots de passes ne correspondent pas. Vous allez être redirigé sur le formulaire d\'inscription dans quelques secondes...</p>';
             header("refresh:3;url=inscription.php");
         }
     } else {
-        echo "Erreur : Cette adresse email est déjà prise. Vous allez être redirigé sur le formulaire d'inscription dans quelques secondes...";
+        echo '<p class="alert alert-danger">Erreur : Cette adresse email est déjà prise. Vous allez être redirigé sur le formulaire d\'inscription dans quelques secondes...</p>';
         header("refresh:3;url=inscription.php");
     }
     
