@@ -69,7 +69,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 	while($donnees = mysqli_fetch_assoc($data)) { ?>
 
 		<div class="media border p-3">
-  			<img src="Images/img_avatar3.png" alt="icone utilisateur" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+  			<img src="images/img_avatar3.png" alt="icone utilisateur" class="mr-3 mt-3 rounded-circle" style="width:60px;">
 			<div class="media-body">
 				<h4><?=htmlspecialchars($donnees['pseudo']). ' ' .htmlspecialchars($donnees['adresse_mail'])?> <small><i><?=$donnees['date']?></i></small> <a href="supp_message.php?id=<?=$donnees['id']?>">
 							<img src='images\supprimer.png' width='25'/>

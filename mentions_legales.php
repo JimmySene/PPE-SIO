@@ -7,8 +7,8 @@ include('includes/header.php'); ?>
 			<h2>CONTACT</h2>
 			<p>Vous pouvez contacter Belle Table par mail via la page de contact.</p>
 			<h2>HÉBERGEMENT</h2>
-			<p>OVH.COM<br />
-			OVH Siège social : 2 rue Kellermann – 59100 Roubaix – France</p>
+			<p>000WEBHOST.com<br />
+			Siège social : 61 Lordou Vironos Street – 6023 Larnaca – Cyprus</p>
 			<h2>CONDITIONS GÉNÉRALES DUTILISATION</h2>
 			<p>Il est interdit de recueillir ou de faire utilisation des données personnelles présentes sur ce site.<br />
 			Il est strictement interdit de copier le contenu de ce site et de le publier sur une autre plateforme sans l'accord de l'auteur.<br />

@@ -35,7 +35,7 @@ $con = sql_connect(); ?>
             }
             while($donnees = mysqli_fetch_assoc($data)) { ?>
                 <div class="card col-12 col-md-6 col-lg-4 ">
-                    <img class="card-img-top" src="Images/produits/<?=$donnees['id']?>.jpg" alt="photo <?=$donnees['nom']?>" />
+                    <img class="card-img-top" src="images/produits/<?=$donnees['id']?>.jpg" alt="photo <?=$donnees['nom']?>" />
                     <div class="card-body">
                         <p class="card-title "><strong><?=$donnees['nom']?></strong></p>
                         <p><small><?php if($donnees['id_marque'] != 1) echo $donnees['nom_marque']; else { echo '<br />'; }?></small></p>

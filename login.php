@@ -1,13 +1,14 @@
 <?php 
 $titrePage = "Login";
-include('includes/header.php'); 
+include('includes/header.php');
+include('fonctions.php'); 
 
 if(isset($_POST['login'])) // Si le formulaire de connexion a été envoyé
 {
     $login = $_POST['login'];
     $mdp = $_POST['mdp'];
 
-    $con = mysqli_connect('localhost', 'root', '', 'belle_table');
+    $con = sql_connect();
     $req = "SELECT * FROM client WHERE adresse_mail = '$login'";
     $data = mysqli_query($con, $req);
 
