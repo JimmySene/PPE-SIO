@@ -9,7 +9,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 	<hr />
 	<h2>Liste des utilisateurs</h2>
 	<hr />
-	
+	<p><a href="journal_session.php">Accéder au journal des sessions</a></p>
 	<p><a href="ajout_user.php" class="btn btn-primary" ><img src="images/ajouter.png" width="25" /> Ajouter un utilisateur</a></p>
 	<table class="table table-striped table-bordered ">
 		<tr>
