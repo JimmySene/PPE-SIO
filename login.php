@@ -20,7 +20,8 @@ if(isset($_POST['login'])) // Si le formulaire de connexion a été envoyé
         {
             $_SESSION['login'] = $login;
             $_SESSION['lvl'] = $donnees['lvl'];
-            $req2 = "INSERT INTO session_utilisateur(login, date_connexion) VALUES('$login',NOW())";
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $req2 = "INSERT INTO session_utilisateur(login, ip, date_connexion) VALUES('$login','$ip', NOW())";
             mysqli_query($con, $req2);
             $req3="SELECT id FROM session_utilisateur WHERE login = '$login' ORDER BY date_connexion DESC LIMIT 0,1";
             $data = mysqli_query($con, $req3);

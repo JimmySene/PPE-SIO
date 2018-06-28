@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 05 juin 2018 à 19:35
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Généré le :  ven. 22 juin 2018 à 13:57
+-- Version du serveur :  5.7.21
+-- Version de PHP :  5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -311,6 +311,34 @@ INSERT INTO `salle` (`id`, `nom`, `description`, `adresse`, `ville`, `code_posta
 (1, 'Charles de Gaulle', 'Cuisine, grande salle \"rivierere du chene\", arriere salle \"fleur de Lys\", balcon terasse.', '2 rue charles de gaulle', 'Paris', '75002', 1500, 'disponible'),
 (2, 'Ruban bleu', '14 Tables, une cuisine.', '12 rue edouard brillant', 'Grenoble', '38100', 1000, 'indisponible'),
 (3, 'Albert Moulignier', '6 tables, une cuisine semipro, jardin de 500m2, stationnement pour invites de 15 places.', '14 rue albert mouligner', 'Meru', '60110', 1500, 'disponible');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `session_utilisateur`
+--
+
+DROP TABLE IF EXISTS `session_utilisateur`;
+CREATE TABLE IF NOT EXISTS `session_utilisateur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `date_connexion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_deconnexion` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `session_utilisateur`
+--
+
+INSERT INTO `session_utilisateur` (`id`, `login`, `ip`, `date_connexion`, `date_deconnexion`) VALUES
+(1, 'admin@gmail.com', '::1', '2018-06-22 14:26:43', '2018-06-22 14:38:07'),
+(2, 'jimmy.sene@laposte.net', '::1', '2018-06-22 14:38:25', '2018-06-22 14:38:38'),
+(3, 'admin@gmail.com', '::1', '2018-06-22 14:38:44', '2018-06-22 15:44:18'),
+(4, 'test', '127.65.98.23', '2018-03-11 00:00:00', '2018-03-11 06:00:00'),
+(5, 'admin@gmail.com', '::1', '2018-06-22 15:44:23', '2018-06-22 15:51:03'),
+(6, 'admin@gmail.com', '::1', '2018-06-22 15:51:50', '2018-06-22 15:56:22');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
