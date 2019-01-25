@@ -21,12 +21,12 @@ include('includes/header.php'); ?>
 			<h2>DÉCLARATION CNIL</h2>
 			<p>Déclaration numéro XXXX renseigné auprès de la CNIL.</p>
 			<h2>ENTREPRISE</h2>
-			<p>SARL J&T Developpement, 14 rue des igloos 75000 Paris</p>
+			<p>SARL J&T Developpement, 12 rue des devs 75001 Paris</p>
 			<h2>POLITIQUE DE REMBOURSEMENT</h2>
 			<p>La réglementation exclut le délai de rétractation légal lors de la “fourniture d’enregistrements audio ou vidéo, ou de logiciels informatiques lorsqu’ils ont été descellés par le consommateur”. Le délai de rétractation légal est donc nul à partir du moment où le produit commandé est téléchargé et/accessible. Source : Article L121-20-2 du code de la consommation.<br />
 			Si vous participez à un programme à abonnement, vous pouvez à tout moment l’annuler via votre compte Paypal, dans vos préférences de règlement. Lorsqu’une garantie est proposée en cas d’absence de résultats lors de la vidéo de présentation d’un produit, celle-ci est uniquement valide dans un délai de 90 jours maximum. Sans précision de durée lors de la vidéo de présentation du produit, celle-ci sera automatiquement de 30 jours.</p>
 			<h2>RÈGLEMENT SÉCURISÉ</h2>
-			<p>Le paiement des formations et programmes se fait grâce au leader mondial du paiement en ligne Paypal. Les règlements sont sécurisés et en cas de questions vous pouvez me contacter directement par email dans le section contact ou via l’espace membre si vous participez déjà à un programme.</p>
+			<p>Le paiement des produits se fait grâce au leader mondial du paiement en ligne Paypal. Les règlements sont sécurisés et en cas de questions vous pouvez nous contacter directement par email dans le section contact.</p>
         
 
 <?php include('includes/footer.php'); ?>

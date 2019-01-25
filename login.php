@@ -5,33 +5,7 @@ include('fonctions.php');
 
 if(isset($_POST['login'])) // Si le formulaire de connexion a été envoyé
 {
-    $login = $_POST['login'];
-    $mdp = $_POST['mdp'];
-
-    $con = sql_connect();
-    $req = "SELECT * FROM client WHERE adresse_mail = '$login'";
-    $data = mysqli_query($con, $req);
-
-    if(mysqli_num_rows($data) > 0) // Si l'utilisateur a été trouvé
-    {
-        $donnees = mysqli_fetch_assoc($data);
-        $verif_mdp = password_verify($mdp, $donnees['mot_de_passe']);
-        if($verif_mdp)
-        {
-            $_SESSION['login'] = $login;
-            $_SESSION['lvl'] = $donnees['lvl'];
-            $ip = $_SERVER['REMOTE_ADDR'];
-            $req2 = "INSERT INTO session_utilisateur(login, ip, date_connexion) VALUES('$login','$ip', NOW())";
-            mysqli_query($con, $req2);
-            $req3="SELECT id FROM session_utilisateur WHERE login = '$login' ORDER BY date_connexion DESC LIMIT 0,1";
-            $data = mysqli_query($con, $req3);
-            if(!$data) echo mysqli_error($con);
-            $donnees = mysqli_fetch_assoc($data);
-            $_SESSION['id_session'] = $donnees['id'];
-          
-        } 
-        
-    }
+    connexion_utilisateur($_POST['login'], $_POST['mdp']);
     
     header('location:login.php');
 

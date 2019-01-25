@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+.menufond{
+
+    background-image: url(../Images/fond.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+ /* background-color:#FFF2C9;  */
+
+}
+
+img.logo{
+    width: 400px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+
+img.menu {
+    width: 100%; 
+    height: auto;
+
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row: auto auto;
+    box-shadow: 2px 2px 14px rgb(0, 0, 0);
+    border-radius: 15px;
+  }
+  
+  .location-listing {
+    position: relative;  
+    width: 100%; 
+    margin-left: 0px;
+    margin-right: auto;
+   
+  }
+  
+  .location-image {
+    line-height: 0;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 14px rgb(0, 0, 0);
+    }
+    
+    #Produit{
+    border-top-left-radius: 15px;
+    }
+    #Salle{
+    border-top-right-radius: 15px;
+    }
+    #Contact{
+    border-bottom-left-radius: 15px; 
+    }
+    #Propos{
+    border-bottom-right-radius: 15px;
+    }
+  
+  .location-image img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.1);
+
+  }
+  
+  .location-title-contact {
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(173, 38, 150, 0.192);;
+    color: rgb(245, 239, 239);
+    border-bottom-left-radius: 15px; 
+    text-shadow: 2px 2px 14px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 14px rgb(0, 0, 0);
+   
+    
+    /* position du texte*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .location-title-produit {
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(206, 140, 79, 0.281);;
+    color: rgb(245, 239, 239);
+    border-top-left-radius: 15px; 
+    text-shadow: 2px 2px 14px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 14px rgb(0, 0, 0);
+    
+    /* position du texte*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .location-title-propos {
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(76, 61, 211, 0.4);;
+    color: rgb(245, 239, 239);
+    border-bottom-right-radius: 15px; 
+    text-shadow: 2px 2px 14px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 14px rgb(0, 0, 0);
+    
+    /* position du texte*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .location-title-salle {
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(39, 138, 9, 0.171);;
+    color: rgb(245, 239, 239);
+    border-top-right-radius: 15px; 
+    text-shadow: 2px 2px 14px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 14px rgb(0, 0, 0);
+
+    /* position du texte*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .location-listing:hover 
+  .location-title-contact{
+    opacity: 1;
+  }
+  .location-listing:hover
+  .location-title-produit{
+    opacity: 1;
+  }
+  .location-listing:hover
+  .location-title-salle{
+    opacity: 1;
+  }
+  .location-listing:hover
+  .location-title-propos {
+    opacity: 1;
+  }
+  
+  .location-listing:hover .location-image img {
+    filter: blur(2px);
+  }
+  
+ @media (hover: none) { 
+    .location-title-contact,
+    .location-title-produit,
+    .location-title-salle,
+    .location-title-propos {
+      opacity: 1;
+    }
+    .location-image img {
+      filter: blur(2px);
+    }
+  }
+
+@media screen and (max-width: 640px){
+    .grid-container {
+        display: block;
+        grid-template-columns: 50% 50%;
+        grid-row: auto auto;
+        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0);
+        border-radius: 0px;
+      }
+      
+
+      .location-title-salle,
+      .location-title-propos, 
+      .location-title-produit,
+      .location-title-contact {
+        border-radius: 15px;
+        box-shadow:  2px 2px 14px rgb(0, 0, 0);
+      }
+     
+        #Produit,
+        #Salle,
+        #Contact,
+        #Propos{
+        margin-bottom:15px; 
+        border-radius: 15px;
+        }
+}

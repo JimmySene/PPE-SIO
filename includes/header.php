@@ -9,15 +9,15 @@
     <title>Belle table - <?php echo $titrePage ?></title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- BOOTSTRAP V4 -->
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     
 </head>
-<body >
+<body <?php if($titrePage == "Accueil") echo 'class="menufond"' ?>>
     <header>
-    
+    <?php if($titrePage != "Accueil") { ?>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     
             <a href="index.php" class="navbar-brand">BELLE TABLE</a>
@@ -26,17 +26,15 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="index.php" class="nav-link" >Présentation</a></li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services </a>
-                    <div class="dropdown-menu">
-                        <a href="produits.php" class="dropdown-item">Produits</a>
-                        <a href="salles.php" class="dropdown-item">Réservation de salles</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="forum.php" class="nav-link">Forum</a></li>
-                <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services </a>
+                        <div class="dropdown-menu">
+                            <a href="produits.php" class="dropdown-item">Produits</a>
+                            <a href="salles.php" class="dropdown-item">Réservation de salles</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="a-propos.php" class="nav-link">A propos</a></li>
                 </ul>
             </div>
        
@@ -47,7 +45,7 @@
             </p>
     
     </nav>
-    
+                <?php } ?>
     </header>
     <main  class="container" style="margin-top : 20px">
        

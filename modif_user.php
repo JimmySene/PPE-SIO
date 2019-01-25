@@ -13,11 +13,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 		
 	} elseif(isset($_GET['id'])) { // Sinon on affiche le formulaire de modification
 
-        $id = $_GET['id'];
-        $con = sql_connect();
-        $req = "SELECT * FROM client WHERE id = '$id'";
-        $resultat = mysqli_query($con, $req);
-        $info_user = mysqli_fetch_assoc($resultat); ?>
+        $info_user = mysqli_fetch_assoc(recup_client_par_id($_GET['id'])); ?>
 
 	
 		<h1 class="display-4">Modifier un utilisateur</h1>
@@ -42,7 +38,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 				<option value="0" <?php if($info_user['lvl'] == 0) { echo 'selected'; } ?>>Utilisateur</option>
 				<option value="1" <?php if($info_user['lvl'] == 1) { echo 'selected'; } ?>>Admin</option>
             </select></p>
-            <input type="hidden" name="id" value="<?=$id?>" />
+            <input type="hidden" name="id" value="<?=$_GET['id']?>" />
 
 			<p><input type="submit" value="Modifier l'utilisateur" class="btn btn-primary" /></p>
 		</form>
