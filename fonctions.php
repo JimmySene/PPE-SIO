@@ -107,11 +107,39 @@ function gestion_user($mode, $id, $email, $mdp, $civilite, $nom, $prenom, $adres
     }
 }
 
+// Ajoute une catégorie de produit
+function ajouter_categorie($nom){
+    $con = sql_connect();
+    $req = "INSERT INTO categorie VALUES(null, '$nom')";
+    mysqli_query($con, $req);
+}
+
 // Renvoie les catégories de produit
 function recup_categories(){
     $con = sql_connect();
     $req = "SELECT * FROM categorie ORDER BY nom";
     return mysqli_query($con, $req);
+}
+
+// Renvoie la catégorie de l'id renseigné
+function recup_categorie_par_id($id){
+    $con = sql_connect();
+    $req = "SELECT * FROM categorie WHERE id = $id";
+    return mysqli_query($con, $req);
+}
+
+// Modifie la catégorie avec l'id renseigné
+function modifier_categorie($id, $nom){
+    $con = sql_connect();
+    $req = "UPDATE categorie SET nom = '$nom'
+    WHERE id = $id";
+    mysqli_query($con, $req);
+}
+// Supprime une catégorie de produit
+function supprimer_categorie($id){
+    $con = sql_connect();
+    $req = "DELETE FROM categorie WHERE id = $id";
+    mysqli_query($con, $req);
 }
 
 // Renvoie les produits par catégorie
@@ -125,6 +153,7 @@ function recup_produits_par_cat($id_cat){
     return mysqli_query($con, $req);
 }
 
+// Ajoute un produit
 function ajouter_produit($nom, $prix, $categorie, $marque){
     $con = sql_connect();
     $req = "INSERT INTO produit VALUES(null, '$nom', '', $prix, $categorie, $marque)";
@@ -149,11 +178,40 @@ function supprimer_produit($id){
     unlink("images/produits/$id.jpg");
 }
 
+// Ajoute une marque de produit
+function ajouter_marque($nom){
+    $con = sql_connect();
+    $req = "INSERT INTO marque VALUES(null, '$nom')";
+    mysqli_query($con, $req);
+}
+
+// Supprime une marque de produit
+function supprimer_marque($id){
+    $con = sql_connect();
+    $req = "DELETE FROM marque WHERE id = $id";
+    mysqli_query($con, $req);
+}
+
 // Renvoie les marques
 function recup_marques(){
     $con = sql_connect();
     $req = "SELECT id, nom FROM marque ORDER BY nom";
     return mysqli_query($con, $req);
+}
+
+// Renvoie la marque de l'id renseigné
+function recup_marque_par_id($id){
+    $con = sql_connect();
+    $req = "SELECT * FROM marque WHERE id = $id";
+    return mysqli_query($con, $req);
+}
+
+// Modifie la marque de l'id renseigné
+function modifier_marque($id, $nom){
+    $con = sql_connect();
+    $req = "UPDATE marque SET nom = '$nom'
+    WHERE id = $id";
+    mysqli_query($con, $req);
 }
 
 // Renvoie tous les produits classés par nom
@@ -167,6 +225,7 @@ function recup_produits(){
     return mysqli_query($con, $req); 
 }
 
+// Renvoie tous les produits pour la zone d'admin
 function recup_admin_produits(){
     $con = sql_connect();
     $req = "SELECT produit.id as produit_id, produit.nom as produit_nom, prix, marque.id as marque_id, marque.nom as marque_nom, categorie.nom as categorie_nom
