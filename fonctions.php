@@ -8,7 +8,7 @@ function sql_connect()
 }
 
 // Connecte l'utilisateur si ses identifiants sont corrects
-function connexion_utilisateur(){
+function connexion_utilisateur($login, $mdp){
     $con = sql_connect($login, $mdp);
     $req = "SELECT * FROM client WHERE adresse_mail = '$login'";
     $data = mysqli_query($con, $req);
@@ -20,7 +20,7 @@ function connexion_utilisateur(){
         if($verif_mdp)
         {
             $_SESSION['login'] = $login;
-            $_SESSION['lvl'] = $donnees['lvl'];
+            $_SESSION['lvl'] = $client['lvl'];
         }    
     }
 }
@@ -125,6 +125,37 @@ function recup_produits_par_cat($id_cat){
     return mysqli_query($con, $req);
 }
 
+function ajouter_produit($nom, $prix, $categorie, $marque){
+    $con = sql_connect();
+    $req = "INSERT INTO produit VALUES(null, '$nom', '', $prix, $categorie, $marque)";
+    mysqli_query($con, $req);
+}
+// Modifie un produit
+function modifier_produit($id, $nom, $prix, $categorie, $marque){
+    $con = sql_connect();
+    $req = "UPDATE produit SET nom = '$nom',
+    prix = $prix,
+    categorie_id = $categorie,
+    marque_id = $marque
+    WHERE id = $id";
+    mysqli_query($con, $req);
+}
+
+// Supprime un produit
+function supprimer_produit($id){
+    $con = sql_connect();
+    $req = "DELETE FROM produit WHERE id = $id";
+    mysqli_query($con, $req);
+    unlink("images/produits/$id.jpg");
+}
+
+// Renvoie les marques
+function recup_marques(){
+    $con = sql_connect();
+    $req = "SELECT id, nom FROM marque ORDER BY nom";
+    return mysqli_query($con, $req);
+}
+
 // Renvoie tous les produits classés par nom
 function recup_produits(){
     $con = sql_connect();
@@ -134,6 +165,29 @@ function recup_produits(){
     ORDER BY produit.nom";
 
     return mysqli_query($con, $req); 
+}
+
+function recup_admin_produits(){
+    $con = sql_connect();
+    $req = "SELECT produit.id as produit_id, produit.nom as produit_nom, prix, marque.id as marque_id, marque.nom as marque_nom, categorie.nom as categorie_nom
+    FROM produit, marque, categorie
+    WHERE produit.marque_id = marque.id
+    AND produit.categorie_id = categorie.id
+    ORDER BY produit.nom";
+
+    return mysqli_query($con, $req);
+}
+
+// Renvoie un produit avec l'id renseigné
+function recup_produit_par_id($id){
+    $con = sql_connect();
+    $req = "SELECT produit.id as produit_id, produit.nom as produit_nom, prix, marque.id as marque_id, marque.nom as marque_nom, categorie.nom as categorie_nom, categorie.id as categorie_id
+    FROM produit, marque, categorie
+    WHERE produit.marque_id = marque.id
+    AND produit.categorie_id = categorie.id
+    AND produit.id = $id";
+
+    return mysqli_query($con, $req);
 }
 
 // Renvoie tous les clients classés par nom

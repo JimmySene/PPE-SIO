@@ -55,7 +55,7 @@ include('includes/header.php'); ?>
 
 		<article  class="location-listing">
 
-			<a class="location-title-propos" href="forum.php">
+			<a class="location-title-propos" href="a-propos.php">
 						à Propos                       </a>
 
 			<div id="Propos" class="location-image">

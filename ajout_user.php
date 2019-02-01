@@ -9,7 +9,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est un admin
 		gestion_user('ajout', 0, $_POST['adresse_mail'], $_POST['mot_de_passe'], $_POST['civilite'], $_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['ville'],
 		$_POST['code_postal'], $_POST['telephone'], $_POST['lvl']); // Ajout de l'utilisateur
 
-		header('location:admin.php');
+		header('location:liste_clients.php');
 		
 	} else { // Sinon on affiche le formulaire d'ajout d'utilisateur ?>
 

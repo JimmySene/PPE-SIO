@@ -9,7 +9,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 		gestion_user('modif', $_POST['id'], $_POST['adresse_mail'], $_POST['mot_de_passe'], $_POST['civilite'], $_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['ville'],
 		$_POST['code_postal'], $_POST['telephone'], $_POST['lvl']);
 
-		header('location:admin.php');
+		header('location:liste_clients.php');
 		
 	} elseif(isset($_GET['id'])) { // Sinon on affiche le formulaire de modification
 
