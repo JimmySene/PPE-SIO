@@ -17,7 +17,23 @@
 </head>
 <body <?php if($titrePage == "Accueil") echo 'class="menufond"' ?>>
     <header>
-    <?php if($titrePage != "Accueil") { ?>
+
+    <?php if($titrePage == "Accueil") {
+        
+        if(isset($_SESSION['login'])){?> 
+            <div id="boutonlogin">
+            <a href="deconnexion.php" class="bouton login">Déconnexion</a>
+            </div>
+       <?php }
+else { ?>
+
+        <div id="boutonlogin">
+        <a href="login.php" class="bouton login">connexion</a>
+        </div>
+        <?php
+     }
+    }
+        else{ ?>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     
             <a href="index.php" class="navbar-brand">BELLE TABLE</a>
@@ -40,7 +56,10 @@
        
     
             <p id="menu_login" class=""><?php if(isset($_SESSION['login'])) { if($_SESSION['lvl'] != 0) { // Si l'utilisateur est admin affiche le lien du panneau d'admin ?> 
-                <a href="admin.php" class="btn btn-primary">Panneau admin</a> <?php } ?> <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> <?php } else { ?>
+                <a href="admin.php" class="btn btn-primary">Panneau admin</a> <?php } ?>
+                <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> <?php } 
+                 
+                 else { ?>
                 <a href="login.php" class="btn btn-primary">Connexion</a> <a href="inscription.php" class="btn btn-primary">Inscription</a><?php } ?>
             </p>
     

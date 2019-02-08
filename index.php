@@ -2,8 +2,7 @@
 include('includes/header.php'); ?>
 
 
-
-							<img class="logo" width="300" height="169" src="Images/logo.png">     
+<img class="logo" width="300" height="169" src="Images/logo.png">     
 
 
 
