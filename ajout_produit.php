@@ -6,7 +6,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 
 	if(isset($_POST['nom'])) { // Si un nouveau produit a été envoyé
 
-		ajouter_produit($_POST['nom'], $_POST['prix'], $_POST['categorie'], $_POST['marque']);
+		ajouter_produit($_POST['nom'], $_POST['prix'], $_FILES['photo'], $_POST['categorie'], $_POST['marque']);
 
 		header('location:liste_produits.php');
 		
@@ -16,9 +16,10 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 		<h1 class="display-4">Ajouter un produit</h1>
 		<hr />
 	
-		<form action="ajout_produit.php" method="post">
+		<form action="ajout_produit.php" method="post" enctype="multipart/form-data">
 			<p class="form-group"><label for="nom">Nom : </label><input type="text" name="nom" id="nom" class="form-control" /></p>
 			<p class="form-group"><label for="prenom">Prix : </label><input type="number" name="prix" id="prix" class="form-control" /></p>
+			<p class="form-group"><label for="photo">Photo : </label><input type="file" name="photo" class="form-control-file" /></p>
 			
 			<p class="form-group">
 				<label for="categorie">Catégorie : </label>

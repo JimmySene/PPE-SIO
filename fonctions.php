@@ -154,13 +154,19 @@ function recup_produits_par_cat($id_cat){
 }
 
 // Ajoute un produit
-function ajouter_produit($nom, $prix, $categorie, $marque){
+function ajouter_produit($nom, $prix, $photo, $categorie, $marque){
     $con = sql_connect();
     $req = "INSERT INTO produit VALUES(null, '$nom', '', $prix, $categorie, $marque)";
     mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        $req = "SELECT id FROM produit ORDER BY id DESC LIMIT 0, 1";
+        $last_id = mysqli_fetch_assoc(mysqli_query($con, $req));
+        $last_id = $last_id['id'];
+        move_uploaded_file($photo['tmp_name'], "images/produits/$last_id.jpg");  
+    } 
 }
 // Modifie un produit
-function modifier_produit($id, $nom, $prix, $categorie, $marque){
+function modifier_produit($id, $nom, $prix, $photo, $categorie, $marque){
     $con = sql_connect();
     $req = "UPDATE produit SET nom = '$nom',
     prix = $prix,
@@ -168,6 +174,10 @@ function modifier_produit($id, $nom, $prix, $categorie, $marque){
     marque_id = $marque
     WHERE id = $id";
     mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        unlink("images/produits/$id.jpg");
+        move_uploaded_file($photo['tmp_name'], "images/produits/$id.jpg");  
+    } 
 }
 
 // Supprime un produit

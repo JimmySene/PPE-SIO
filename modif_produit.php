@@ -6,7 +6,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 
 	if(isset($_POST['id'])) { // Si l'ID du produit a été transmis par formulaire alors on le modifie dans la BDD et on redirige l'utilisateur sur le pannel admin
 
-		modifier_produit($_POST['id'], $_POST['nom'], $_POST['prix'], $_POST['categorie'], $_POST['marque']);
+		modifier_produit($_POST['id'], $_POST['nom'], $_POST['prix'], $_FILES['photo'], $_POST['categorie'], $_POST['marque']);
 
 		header('location:liste_produits.php');
 		
@@ -18,10 +18,11 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 		<h1 class="display-4">Modifier un produit</h1>
 		<hr />
 	
-		<form action="modif_produit.php" method="post">
+		<form action="modif_produit.php" method="post" enctype="multipart/form-data">
 			<p class="form-group"><label for="nom">Nom : </label><input type="text" name="nom" id="nom" value="<?=htmlspecialchars($info_produit['produit_nom'])?>" class="form-control" /></p>
 			<p class="form-group"><label for="prenom">Prix : </label><input type="number" name="prix" id="prix" value="<?=htmlspecialchars($info_produit['prix'])?>" class="form-control" /></p>
-			
+			<p class="form-group"><label for="photo">Photo : </label><input type="file" name="photo" class="form-control-file" /></p>
+
 			<p class="form-group">
 				<label for="categorie">Catégorie : </label>
 				<select name="categorie" id="categorie" class="form-control" />
