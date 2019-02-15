@@ -4,13 +4,13 @@ include('fonctions.php');
 
 if(verif_admin()) { // On vérifie si l'utilisateur est admin
 
-	if(isset($_POST['nom'])) { // Si une nouvelle catégorie a été envoyée
+	if(isset($_POST['nom'])) { // Si une nouvelle marque a été envoyée
 
 		ajouter_marque($_POST['nom']);
 
 		header('location:liste_marques.php');
 		
-	} else { // Sinon on affiche le formulaire de modification ?>
+	} else { // Sinon on affiche le formulaire d'ajout ?>
 
         
 		<h1 class="display-4">Ajouter une marque</h1>

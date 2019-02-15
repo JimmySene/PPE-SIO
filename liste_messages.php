@@ -1,4 +1,4 @@
-<?php $titrePage = "Liste des clients";
+<?php $titrePage = "Liste des messages";
 include('includes/header.php');
 include('fonctions.php'); 
 

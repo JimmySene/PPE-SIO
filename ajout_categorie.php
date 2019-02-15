@@ -10,7 +10,7 @@ if(verif_admin()) { // On vérifie si l'utilisateur est admin
 
 		header('location:liste_categories.php');
 		
-	} else { // Sinon on affiche le formulaire de modification ?>
+	} else { // Sinon on affiche le formulaire d'ajout ?>
 
         
 		<h1 class="display-4">Ajouter une catégorie</h1>

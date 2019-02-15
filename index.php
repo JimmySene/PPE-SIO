@@ -15,7 +15,7 @@ include('includes/header.php'); ?>
 		<article class="location-listing">
 
 			<a class="location-title-produit" href="produits.php">
-						Produit                       </a>
+						Produits                       </a>
 
 			<div id="Produit" class="location-image">
 			<a href="produits.php">
@@ -27,7 +27,7 @@ include('includes/header.php'); ?>
 		<article class="location-listing">
 
 			<a class="location-title-salle" href="salles.php">
-						Salle                      </a>
+						Salles                      </a>
 
 			<div id="Salle" class="location-image">
 			<a href="salles.php">

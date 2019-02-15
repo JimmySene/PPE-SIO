@@ -308,4 +308,40 @@ function envoyer_message($email, $pseudo, $message, $date_envoie){
     mysqli_query($con,$req);
 }
 
+// Récupère tous les partenaires
+function recup_partenaires(){
+    $con = sql_connect();
+    $req = "SELECT * FROM partenaire ORDER BY nom";
+    return mysqli_query($con, $req);
+}
+
+// Ajoute un partenaire
+function ajouter_partenaire($nom, $type){
+    $con = sql_connect();
+    $req = "INSERT INTO partenaire VALUES(null, '$nom', '$type')";
+    mysqli_query($con, $req);
+}
+
+function recup_partenaire_par_id($id_partenaire){
+    $con = sql_connect();
+    $req = "SELECT * FROM partenaire WHERE id = $id_partenaire";
+    return mysqli_query($con,$req);
+}
+
+// Supprime le partenaire avec l'id renseigné
+function supprimer_partenaire($id_partenaire){
+    $con  = sql_connect();
+	$req = "DELETE FROM partenaire WHERE id = $id_partenaire";
+	mysqli_query($con,$req);
+}
+
+// Modifie le partenaire de l'id renseigné
+function modifier_partenaire($id, $nom, $type){
+    $con = sql_connect();
+    $req = "UPDATE partenaire SET nom = '$nom',
+    type = '$type'
+    WHERE id = $id";
+    mysqli_query($con,$req);
+}
+
 ?>
