@@ -14,6 +14,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 		<li><a href="liste_categories.php">Gérer les catégories des produits</a></li>
 		<li><a href="liste_marques.php">Gérer les marques</a></li>
 		<li><a href="liste_partenaires.php">Gérer les partenaires</a></li>
+		<li><a href="liste_salles.php">Gérer les salles</a></li>
 	</ul>
 <?php 
  } else header("location:index.php"); // Sinon redirection sur la page d'accueil

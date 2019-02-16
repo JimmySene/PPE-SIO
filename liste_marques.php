@@ -19,7 +19,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 		</tr>
 						
 	<?php
-		$con  = sql_connect();
+		
 		$resultat = recup_marques();
 		$i = 0;
 		while($marque = mysqli_fetch_assoc($resultat)) {

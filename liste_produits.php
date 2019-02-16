@@ -23,7 +23,6 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 		</tr>
 						
 	<?php
-		$con  = sql_connect();
 		$resultat = recup_admin_produits();
 		$i = 0;
 		while($produit = mysqli_fetch_assoc($resultat)) { 

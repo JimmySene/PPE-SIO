@@ -280,6 +280,53 @@ function recup_salles(){
     return mysqli_query($con, $req);
 }
 
+// Récupère la salle avec l'id renseigné
+function recup_salle_par_id($id_salle){
+    $con = sql_connect();
+    $req = "SELECT * FROM salle WHERE id = $id_salle";
+    return mysqli_query($con, $req);
+}
+
+// Ajoute une salle
+function ajouter_salle($nom, $description, $adresse, $ville, $code_postal, $tarif, $disponibilite, $photo){
+    $con = sql_connect();
+    $req = "INSERT INTO salle VALUES(null, '$nom', '$description','$adresse', '$ville', '$code_postal', $tarif, '$disponibilite')";
+    mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        $req = "SELECT id FROM salle ORDER BY id DESC LIMIT 0, 1";
+        $last_id = mysqli_fetch_assoc(mysqli_query($con, $req));
+        $last_id = $last_id['id'];
+        move_uploaded_file($photo['tmp_name'], "images/salles/$last_id.jpg");  
+    } 
+}
+
+// Modifie une salle
+function modifier_salle($id, $nom, $description, $adresse, $ville, $code_postal, $tarif, $disponibilite, $photo){
+    $con = sql_connect();
+    $req = "UPDATE salle SET nom = '$nom',
+    description = '$description',
+    adresse = '$adresse',
+    ville = '$ville',
+    code_postal = '$code_postal',
+    tarif = $tarif,
+    disponibilite = '$disponibilite'
+    WHERE id = $id";
+    mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        unlink("images/salles/$id.jpg");
+        move_uploaded_file($photo['tmp_name'], "images/salles/$id.jpg");  
+    } 
+}
+
+
+// Supprime la salle avec l'id renseigné
+function supprimer_salle($id_salle){
+    $con  = sql_connect();
+    $req = "DELETE FROM salle WHERE id = $id_salle";
+    unlink("images/salles/$id_salle.jpg");
+	mysqli_query($con,$req);
+}
+
 // Renvoie tous les messages privés reçus
 function recup_messages(){
     $con = sql_connect();

@@ -20,7 +20,6 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 		</tr>
 						
 	<?php
-		$con  = sql_connect();
 		$resultat = recup_partenaires();
 		$i = 0;
 		while($partenaire = mysqli_fetch_assoc($resultat)) { 
