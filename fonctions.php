@@ -280,6 +280,53 @@ function recup_salles(){
     return mysqli_query($con, $req);
 }
 
+// Récupère la salle avec l'id renseigné
+function recup_salle_par_id($id_salle){
+    $con = sql_connect();
+    $req = "SELECT * FROM salle WHERE id = $id_salle";
+    return mysqli_query($con, $req);
+}
+
+// Ajoute une salle
+function ajouter_salle($nom, $description, $adresse, $ville, $code_postal, $tarif, $disponibilite, $photo){
+    $con = sql_connect();
+    $req = "INSERT INTO salle VALUES(null, '$nom', '$description','$adresse', '$ville', '$code_postal', $tarif, '$disponibilite')";
+    mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        $req = "SELECT id FROM salle ORDER BY id DESC LIMIT 0, 1";
+        $last_id = mysqli_fetch_assoc(mysqli_query($con, $req));
+        $last_id = $last_id['id'];
+        move_uploaded_file($photo['tmp_name'], "images/salles/$last_id.jpg");  
+    } 
+}
+
+// Modifie une salle
+function modifier_salle($id, $nom, $description, $adresse, $ville, $code_postal, $tarif, $disponibilite, $photo){
+    $con = sql_connect();
+    $req = "UPDATE salle SET nom = '$nom',
+    description = '$description',
+    adresse = '$adresse',
+    ville = '$ville',
+    code_postal = '$code_postal',
+    tarif = $tarif,
+    disponibilite = '$disponibilite'
+    WHERE id = $id";
+    mysqli_query($con, $req);
+    if($photo['error'] == 0 && ($photo['type'] == 'image/jpg' || $photo['type'] == 'image/jpeg')) {
+        unlink("images/salles/$id.jpg");
+        move_uploaded_file($photo['tmp_name'], "images/salles/$id.jpg");  
+    } 
+}
+
+
+// Supprime la salle avec l'id renseigné
+function supprimer_salle($id_salle){
+    $con  = sql_connect();
+    $req = "DELETE FROM salle WHERE id = $id_salle";
+    unlink("images/salles/$id_salle.jpg");
+	mysqli_query($con,$req);
+}
+
 // Renvoie tous les messages privés reçus
 function recup_messages(){
     $con = sql_connect();
@@ -305,6 +352,42 @@ function supprimer_client($id_client){
 function envoyer_message($email, $pseudo, $message, $date_envoie){
     $con  = sql_connect();
     $req = "INSERT INTO  contact(adresse_mail, pseudo, message, date_envoie) VALUES('$email','$pseudo','$message','$date_envoie')";
+    mysqli_query($con,$req);
+}
+
+// Récupère tous les partenaires
+function recup_partenaires(){
+    $con = sql_connect();
+    $req = "SELECT * FROM partenaire ORDER BY nom";
+    return mysqli_query($con, $req);
+}
+
+// Ajoute un partenaire
+function ajouter_partenaire($nom, $type){
+    $con = sql_connect();
+    $req = "INSERT INTO partenaire VALUES(null, '$nom', '$type')";
+    mysqli_query($con, $req);
+}
+
+function recup_partenaire_par_id($id_partenaire){
+    $con = sql_connect();
+    $req = "SELECT * FROM partenaire WHERE id = $id_partenaire";
+    return mysqli_query($con,$req);
+}
+
+// Supprime le partenaire avec l'id renseigné
+function supprimer_partenaire($id_partenaire){
+    $con  = sql_connect();
+	$req = "DELETE FROM partenaire WHERE id = $id_partenaire";
+	mysqli_query($con,$req);
+}
+
+// Modifie le partenaire de l'id renseigné
+function modifier_partenaire($id, $nom, $type){
+    $con = sql_connect();
+    $req = "UPDATE partenaire SET nom = '$nom',
+    type = '$type'
+    WHERE id = $id";
     mysqli_query($con,$req);
 }
 
