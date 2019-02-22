@@ -17,26 +17,9 @@
 </head>
 <body <?php if($titrePage == "Accueil") echo 'class="menufond"' ?>>
     <header>
-
-    <?php if($titrePage == "Accueil") {
-        
-        if(isset($_SESSION['login'])){?> 
-            <div id="boutonlogin">
-            <a href="deconnexion.php" class="bouton login">Déconnexion</a>
-            </div>
-       <?php }
-else { ?>
-
-        <div id="boutonlogin">
-        <a href="login.php" class="bouton login">connexion</a>
-        </div>
-        <?php
-     }
-    }
-        else{ ?>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    
-            <a href="index.php" class="navbar-brand">BELLE TABLE</a>
+    <nav class="navbar navbar-expand-sm nav_color navbar-dark">
+            <a href="index.php" class="navbar-brand "> <img src="Images/logo2.png" alt="Logo" style="width:200px;padding-bottom:12px;"></a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,16 +39,20 @@ else { ?>
        
     
             <p id="menu_login" class=""><?php if(isset($_SESSION['login'])) { if($_SESSION['lvl'] != 0) { // Si l'utilisateur est admin affiche le lien du panneau d'admin ?> 
-                <a href="admin.php" class="btn btn-primary">Panneau admin</a> <?php } ?>
-                <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> <?php } 
+                
+                <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> 
+                <a href="admin.php" class="btn btn-primary">Panneau admin</a> <?php } ?><?php } 
+
+                
                  
                  else { ?>
                 <a href="login.php" class="btn btn-primary">Connexion</a> <a href="inscription.php" class="btn btn-primary">Inscription</a><?php } ?>
             </p>
     
     </nav>
-                <?php } ?>
+
     </header>
-    <main  class="container" style="margin-top : 20px">
+    
+ 
        
         

@@ -2,73 +2,67 @@
 include('includes/header.php'); ?>
 
 
-<img class="logo" width="300" height="169" src="Images/logo.png">     
+<div id="slider" class="carousel slide " data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#slider" data-slide-to="0" class="active"></li>
+    <li data-target="#slider" data-slide-to="1"></li>
+  </ul>
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Images/salle-menu.jpg" alt="Nos Salles" width="100%" height="100%" >
+      <div class="carousel-caption ">
 
+          <h3 class="text_slide">Nos Salles</h3>
+          <p class="text_slide">blablablab</p>
+      </div>    
+    </div>
+    <div class="carousel-item">
+      <img src="Images/argentrie.jpg" alt="Nos Produits" width="100%" height="100%">
+      <div class="carousel-caption ">
 
+          <h3 class="text_slide">Nos Produits</h3>
+          <p class="text_slide">blablablabblablablab</p>
+      </div> 
+    </div>
 
+     <a class="carousel-control-prev" href="#slider" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#slider" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
 
-<div class="child-page-listing">
+<div class="step-container"><div class="widget block block-static-block">
+    <div class="container">
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <h2 class="text">Louez tout le matériel pour votre réception en 3 étapes !</h2>
+  </div>
+</div>
+  <div class="row" style=" margin-bottom: 50px;">
 
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="step row">
+      <div class="col-xs-12 col-xs-half"><img class="img-responsive" src="https://www.options.fr/media/wysiwyg/icone_selection.png" alt="" /><span class="step-number">1</span><span class="step-label">Sélectionnez votre vaisselle, mobilier et décoration en ligne</span></div>
+    </div>
 
-	<div class="grid-container ">
-		<!-- ________________________ Produit ___________________________ -->
-		<article class="location-listing">
+    </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="step row">
+      <div class="col-xs-12 col-xs-half"><img class="img-responsive" src="https://www.options.fr/media/wysiwyg/icone_quantite.png" alt="" /><span class="step-number">2</span><span class="step-label">Déterminez la quantité dont vous avez besoin</span></div>
+    </div>
 
-			<a class="location-title-produit" href="produits.php">
-						Produit                       </a>
+    </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="step row">
+      <div class="col-xs-12 col-xs-half"><img class="img-responsive" src="https://www.options.fr/media/wysiwyg/icone_valider.png" alt="" /><span class="step-number">3</span><span class="step-label">Validez votre panier : un conseiller s'occupera d'établir un devis sous 24H</span></div>
+    </div>
 
-			<div id="Produit" class="location-image">
-			<a href="produits.php">
-							<img class="menu" width="300" height="169" src="Images/produit.1.jpg" alt="produit">      </a>
-			</div>
-
-		</article>
-		<!-- ________________________ Salle ___________________________ -->
-		<article class="location-listing">
-
-			<a class="location-title-salle" href="salles.php">
-						Salle                      </a>
-
-			<div id="Salle" class="location-image">
-			<a href="salles.php">
-							<img class="menu" width="300" height="169" src="Images/salle.1.jpg" alt="Salle">    </a>
-
-			</div>
-
-		</article>
-		<!-- ________________________ Contact ___________________________ -->
-
-		<article class="location-listing">
-
-			<a class="location-title-contact"  href="contact.php">
-						Contact                        </a>
-
-			<div id="Contact" class="location-image">
-			<a href="contact.php">
-							<img class="menu" width="300" height="169" src="Images/contact.1.jpg" alt="Contact">    </a>
-
-			</div>
-
-		</article>
-		<!-- ________________________ Propos ___________________________ -->
-
-		<article  class="location-listing">
-
-			<a class="location-title-propos" href="a-propos.php">
-						à Propos                       </a>
-
-			<div id="Propos" class="location-image">
-			<a href="forum.php">
-							<img class="menu" width="300" height="169" src="Images/propos.1.jpg" alt="Propos">  </a>
-
-			</div>
-
-		</article>
-
-	</div>
-	<!-- end grid container -->
-	</div>
-
+  </div>
+</div>
+</div>
 
 
 <?php include('includes/footer.php'); ?>
