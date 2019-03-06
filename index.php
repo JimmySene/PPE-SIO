@@ -38,7 +38,7 @@ include('includes/header.php'); ?>
     <div class="container">
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <h2 class="text">Louez tout le matériel pour votre réception en 3 étapes !</h2>
+    <h2 class="text">Achetez tout le matériel pour votre réception en 3 étapes !</h2>
   </div>
 </div>
   <div class="row" style=" margin-bottom: 50px;">
@@ -57,7 +57,7 @@ include('includes/header.php'); ?>
     </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="step row">
-      <div class="col-xs-12 col-xs-half"><img class="img-responsive" src="https://www.options.fr/media/wysiwyg/icone_valider.png" alt="" /><span class="step-number">3</span><span class="step-label">Validez votre panier : un conseiller s'occupera d'établir un devis sous 24H</span></div>
+      <div class="col-xs-12 col-xs-half"><img class="img-responsive" src="https://www.options.fr/media/wysiwyg/icone_valider.png" alt="" /><span class="step-number">3</span><span class="step-label">Validez votre panier !</span></div>
     </div>
 
   </div>

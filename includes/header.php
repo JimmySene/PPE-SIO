@@ -13,6 +13,7 @@
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/scripts.js"></script>
     
 </head>
 <body <?php if($titrePage == "Accueil") echo 'class="menufond"' ?>>
@@ -34,6 +35,7 @@
                     </li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="a-propos.php" class="nav-link">A propos</a></li>
+                    <li class="nav-item"><a href="panier.php" class="nav-link">Panier</a></li>
                 </ul>
             </div>
        

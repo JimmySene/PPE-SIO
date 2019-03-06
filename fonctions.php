@@ -21,6 +21,11 @@ function connexion_utilisateur($login, $mdp){
         {
             $_SESSION['login'] = $login;
             $_SESSION['lvl'] = $client['lvl'];
+            $_SESSION['panier'] = array();
+            $_SESSION['panier']['id'] = array();
+            $_SESSION['panier']['nom'] = array();
+            $_SESSION['panier']['prix'] = array();
+            $_SESSION['panier']['quantite'] = array();
         }    
     }
 }
@@ -389,6 +394,15 @@ function modifier_partenaire($id, $nom, $type){
     type = '$type'
     WHERE id = $id";
     mysqli_query($con,$req);
+}
+
+function prix_total_panier(){
+    $total=0;
+    for($i = 0; $i < count($_SESSION['panier']['id']); $i++)
+    {
+        $total += $_SESSION['panier']['prix'][$i] * $_SESSION['panier']['quantite'][$i];
+    }
+    return $total;
 }
 
 ?>

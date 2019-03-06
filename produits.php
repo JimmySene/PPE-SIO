@@ -35,6 +35,15 @@ include('fonctions.php'); ?>
                         <p><small><?php if($donnees['marque_id'] != 1) echo $donnees['marque_nom']; else { echo '<br />'; }?></small></p>
                     
                         <p class="prix"><mark><?=$donnees['prix']?>€</mark> <i class="fas fa-shopping-basket"></i></p>
+                        <form>
+                            <select name="quantite" class="f_quantite"><?php for($i=1;$i<=10;$i++) { ?>
+                                <option value="<?=$i?>"><?=$i?></option> <?php } ?>
+                            </select> 
+                            <input type="hidden" name="prix" class="f_prix" value="<?=$donnees['prix']?>" />
+                            <input type="hidden" name="nom" class="f_nom" value="<?=$donnees['produit_nom']?>" />
+                            <input type="hidden" name="id" class="f_id" value="<?=$donnees['produit_id']?>" />
+                            <input type="button" name="submit" class="submit" value="Ajouter au panier">
+                        </form>
                     </div>
                 </div>
             <?php } ?>
@@ -42,4 +51,20 @@ include('fonctions.php'); ?>
         </div>
     </div>
 
+    <!-- MODAL AJOUT PRODUIT -->
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Produit ajouté au panier</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Votre produit a bien été ajouté au panier !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php include('includes/footer.php'); ?>

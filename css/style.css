@@ -35,6 +35,9 @@ footer a{
     
 }
 
+#panier img{
+  padding-right : 25px;
+}
 /* menu admin */ 
 .link {
   text-decoration: none;
