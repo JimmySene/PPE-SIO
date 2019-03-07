@@ -1,15 +1,5 @@
 $(document).ready(function(){
 
-    // Supprime un élément du panier
-    $('.supprimer').click(function(){
-        var indice_produit = $(this).parent().parent().data("id");
-        $(this).parent().parent().hide();
-        $.post("sup_panier.php", { id: indice_produit } , function(data){
-            $('.modal').show();
-            $('#total span').html(data);
-        });
-    });
-
     // Ajoute un élément dans le panier
     $('.submit').click(function(){
 

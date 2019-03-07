@@ -19,6 +19,7 @@ function connexion_utilisateur($login, $mdp){
         $verif_mdp = password_verify($mdp, $client['mot_de_passe']);
         if($verif_mdp)
         {
+            $_SESSION['id'] = $client['id'];
             $_SESSION['login'] = $login;
             $_SESSION['lvl'] = $client['lvl'];
             $_SESSION['panier'] = array();
@@ -403,6 +404,16 @@ function prix_total_panier(){
         $total += $_SESSION['panier']['prix'][$i] * $_SESSION['panier']['quantite'][$i];
     }
     return $total;
+}
+
+function compter_panier(){
+    $nb_produits = 0;
+    if(isset($_SESSION['panier']['id'])){
+        while($nb_produits < count($_SESSION['panier']['id'])){
+            $nb_produits++;
+        }
+    }
+    return $nb_produits;
 }
 
 ?>

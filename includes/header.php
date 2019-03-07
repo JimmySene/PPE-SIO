@@ -40,10 +40,13 @@
             </div>
        
     
-            <p id="menu_login" class=""><?php if(isset($_SESSION['login'])) { if($_SESSION['lvl'] != 0) { // Si l'utilisateur est admin affiche le lien du panneau d'admin ?> 
-                
+            <p id="menu_login" class=""><?php if(isset($_SESSION['login'])) {
+                if($_SESSION['lvl'] != 0) { // Si l'utilisateur est admin affiche le lien du panneau d'admin ?> 
+                    <a href="admin.php" class="btn btn-primary">Panneau admin</a> 
+                    <?php } ?>
+                <a href="profil.php" class="btn btn-primary">Mon profil</a>
                 <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> 
-                <a href="admin.php" class="btn btn-primary">Panneau admin</a> <?php } ?><?php } 
+                <?php } 
 
                 
                  

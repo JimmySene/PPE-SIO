@@ -35,6 +35,7 @@ include('fonctions.php'); ?>
                         <p><small><?php if($donnees['marque_id'] != 1) echo $donnees['marque_nom']; else { echo '<br />'; }?></small></p>
                     
                         <p class="prix"><mark><?=$donnees['prix']?>€</mark> <i class="fas fa-shopping-basket"></i></p>
+                        <?php if(isset($_SESSION['login'])) { ?>
                         <form>
                             <select name="quantite" class="f_quantite"><?php for($i=1;$i<=10;$i++) { ?>
                                 <option value="<?=$i?>"><?=$i?></option> <?php } ?>
@@ -44,6 +45,7 @@ include('fonctions.php'); ?>
                             <input type="hidden" name="id" class="f_id" value="<?=$donnees['produit_id']?>" />
                             <input type="button" name="submit" class="submit" value="Ajouter au panier">
                         </form>
+                            <?php } ?>
                     </div>
                 </div>
             <?php } ?>
