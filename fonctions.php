@@ -355,9 +355,10 @@ function supprimer_client($id_client){
 }
 
 // Envoie un message privé
-function envoyer_message($email, $pseudo, $message, $date_envoie){
+function envoyer_message($email, $pseudo, $sujet, $message, $date_envoie){
+    $message = addslashes($message);
     $con  = sql_connect();
-    $req = "INSERT INTO  contact(adresse_mail, pseudo, message, date_envoie) VALUES('$email','$pseudo','$message','$date_envoie')";
+    $req = "INSERT INTO  contact(adresse_mail, pseudo, sujet, message, date_envoie) VALUES('$email','$pseudo', '$sujet', '$message','$date_envoie')";
     mysqli_query($con,$req);
 }
 

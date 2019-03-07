@@ -18,9 +18,10 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 		<div class="media border p-3">
   			<img src="images/img_avatar3.png" alt="icone utilisateur" class="mr-3 mt-3 rounded-circle" style="width:60px;">
 			<div class="media-body">
-				<h4><?=htmlspecialchars($message['pseudo']). ' ' .htmlspecialchars($message['adresse_mail'])?> <small><i><?=$message['date_envoie']?></i></small> <a href="sup_message.php?id=<?=$message['id']?>">
+				<h4><?=htmlspecialchars($message['sujet'])?><a href="sup_message.php?id=<?=$message['id']?>">
 							<img src='images\supprimer.png' width='25'/>
 						</a></h4>
+				<p><?=htmlspecialchars($message['pseudo']).' '.htmlspecialchars($message['adresse_mail'])?> <small><i><?=$message['date_envoie']?></i></small></p>
 				<p><?=nl2br(htmlspecialchars($message['message']))?></p>
 			</div>
 		</div>

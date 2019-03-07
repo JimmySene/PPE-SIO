@@ -17,7 +17,11 @@ include('fonctions.php'); ?>
                 <p class="card-text"><?= $salle['description'] ?></p>
                 <p class="card-text">Située à : <?php echo $salle['adresse'] . ' ' . $salle['code_postal'] . ' ' .  $salle['ville'] ?> </p>
                 <p>Tarif : <mark class="prix"><?=$salle['tarif']?>€</mark></p>
-                <p style="margin-top : 40px;"><a href="" class=" btn <?php if($salle['disponibilite'] != 'disponible') { $txt_dispo = "Indisponible"; echo 'btn-danger'; } else { echo 'btn-success'; } ?>"><?=$txt_dispo?></a></p>
+                <?php if($salle['disponibilite'] != 'disponible') { ?>
+                    <p style="margin-top : 40px;"><a href="#" class="btn btn-danger">Indisponible</a></p>
+                <?php } else { ?>
+                    <p style="margin-top : 40px;"><a href="contact.php?salle=<?=$salle['id']?>" class="btn btn-success">Disponible</a></p>
+                <?php } ?>
             </div>
         </div>
     <?php } ?>
