@@ -25,8 +25,8 @@ if(isset($_SESSION['login'])){ // On vérifie que l'utilisateur est connecté
         <?php }
         ?>
     </table>  
-    <p id="total">Total : <span><?=prix_total_panier()?></span>€</p>
-    <p><a href="#">Acheter</a></p>
+    <p class="pannier_rigth" id="total">Total : <span><?=prix_total_panier()?></span>€</p>
+    <p class="pannier_rigth" ><a href="#">Acheter</a></p>
 
     <?php } else { ?>
        <p>Votre panier est vide !</p>

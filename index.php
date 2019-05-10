@@ -14,7 +14,7 @@ include('includes/header.php'); ?>
       <div class="carousel-caption ">
 
           <h3 class="text_slide">Nos Salles</h3>
-          <p class="text_slide">blablablab</p>
+          <p class="text_slide"></p>
       </div>    
     </div>
     <div class="carousel-item">
@@ -22,7 +22,7 @@ include('includes/header.php'); ?>
       <div class="carousel-caption ">
 
           <h3 class="text_slide">Nos Produits</h3>
-          <p class="text_slide">blablablabblablablab</p>
+          <p class="text_slide"></p>
       </div> 
     </div>
 

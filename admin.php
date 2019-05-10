@@ -7,7 +7,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 <div class="planbleus">
   <div class="menuadmin">
 
-<<<<<<< HEAD
+
     <h1 class="display-4 centretexte">Panneau d'administration</h1>
 
     <div id="bouton">

@@ -44,10 +44,10 @@ if(isset($_POST['email']) && !empty($_POST['email']) && !empty($_POST['mdp']) &&
     else {
 ?>
 
-    <h1 class="display-4">Inscription</h1>
+    <h1 class="display-4 form">Inscription</h1>
     <hr />
-    <p>Inscrivez vous en moins de deux minutes afin de pouvoir acheter nos produits ou réserver une salle.</p>
-    <form action="inscription.php" method="post">
+    <p class="pad-form">Inscrivez vous en moins de deux minutes afin de pouvoir acheter nos produits ou réserver une salle.</p>
+    <form action="inscription.php" method="post" class="form">
         <p class="form-group"><label for="email">Adresse mail : </label><input type="email" name="email" id="email" size="30" class="form-control" /></p>
         <p class="form-group"><label for="mdp">Mot de passe : </label><input type="password" name="mdp" id="mdp" size="30" class="form-control" /></p>
         <p class="form-group"><label for="verif_mdp">Vérification du mot de passe : </label><input type="password" name="verif_mdp" id="verif_mdp" size="30" class="form-control" /></p>

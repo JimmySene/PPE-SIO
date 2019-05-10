@@ -2,10 +2,10 @@
 include('includes/header.php');
 include("fonctions.php"); ?>
 
-    <h1 class="display-4">Nous contacter</h1>
+    <h1 class="display-4 form">Nous contacter</h1>
     <hr />
-    <p>Vous pouvez nous contacter via le formulaire ci-dessous. Nous vous recontacterons ensuite par email.</p>
-    <form action="envoi_message.php" method="post">
+    <p class ="pad-form">Vous pouvez nous contacter via le formulaire ci-dessous. Nous vous recontacterons ensuite par email.</p>
+    <form action="envoi_message.php" method="post" class="form">
         <p class="form-group"><label for="email">Votre adresse mail : </label><input type="email" name="email" id="email" size="30" class="form-control"
         <?php if(isset($_SESSION['login'])) { ?> value="<?=$_SESSION['login']?>" <?php } ?> required /></p>
         <p class="form-group"><label for="pseudo">Votre nom d'entreprise ou prénom : </label><input type="text" name="pseudo" id="pseudo" size="30" class="form-control" required /></p>

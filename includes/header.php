@@ -35,21 +35,18 @@
                     </li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="a-propos.php" class="nav-link">A propos</a></li>
-                    <li class="nav-item"><a href="panier.php" class="nav-link">Panier</a></li>
                 </ul>
             </div>
        
-    
+            <a href="panier.php" class="nav-link panier_nav"> <img src="Images/shop.png" alt="Panier" style="width:25px;padding-bottom:12px;"></a>
             <p id="menu_login" class=""><?php if(isset($_SESSION['login'])) {
                 if($_SESSION['lvl'] != 0) { // Si l'utilisateur est admin affiche le lien du panneau d'admin ?> 
-                    <a href="admin.php" class="btn btn-primary">Panneau admin</a> 
+                    <a href="admin.php" ><img src="Images/admin.png" alt="Panneau admin" style="width:25px;padding-bottom:12px;padding-top:12px;margin-right: 10px"></a> 
                     <?php } ?>
-                <a href="profil.php" class="btn btn-primary">Mon profil</a>
-                <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a> 
+                <a href="deconnexion.php" ><img src="Images/deco.png" alt="Déconnexion" style="width:25px;padding-bottom:12px;padding-top:12px;"></a> 
                 <?php } 
 
                 
-                 
                  else { ?>
                 <a href="login.php" class="btn btn-primary">Connexion</a> <a href="inscription.php" class="btn btn-primary">Inscription</a><?php } ?>
             </p>
