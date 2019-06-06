@@ -54,6 +54,7 @@
     </nav>
 
     </header>
+                 <main <?php if($titrePage != "Accueil") { ?>class="container" <?php } ?>>
     
  
        
