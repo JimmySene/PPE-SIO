@@ -16,10 +16,10 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 	while($message = mysqli_fetch_assoc($data)) { ?>
 
 		<div class="media border p-3">
-  			<img src="images/img_avatar3.png" alt="icone utilisateur" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+  			<img src="Images/img_avatar3.png" alt="icone utilisateur" class="mr-3 mt-3 rounded-circle" style="width:60px;">
 			<div class="media-body">
 				<h4><?=htmlspecialchars($message['sujet'])?><a href="sup_message.php?id=<?=$message['id']?>">
-							<img src='images\supprimer.png' width='25'/>
+							<img src='Images\supprimer.png' width='25'/>
 						</a></h4>
 				<p><?=htmlspecialchars($message['pseudo']).' '.htmlspecialchars($message['adresse_mail'])?> <small><i><?=$message['date_envoie']?></i></small></p>
 				<p><?=nl2br(htmlspecialchars($message['message']))?></p>

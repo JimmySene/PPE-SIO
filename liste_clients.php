@@ -10,7 +10,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 	<h2>Liste des utilisateurs</h2>
 	<hr />
 	
-	<p><a href="ajout_user.php" class="btn btn-primary" ><img src="images/ajouter.png" width="25" /> Ajouter un utilisateur</a></p>
+	<p><a href="ajout_user.php" class="btn btn-primary" ><img src="Images/ajouter.png" width="25" /> Ajouter un utilisateur</a></p>
 	<table class="table table-striped table-bordered ">
 		<tr>
 			<th>Nom</th>
@@ -39,12 +39,12 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 					<td>".$lvl."</td>
 					<td>
 						<a href='modif_user.php?id=".$client["id"]."'>
-							<img src='images\modif.png' width='25' />
+							<img src='Images\modif.png' width='25' />
 						</a>
 					</td>
 					<td>
 						<a href='sup_user.php?id=".$client["id"]."'>
-							<img src='images\supprimer.png' width='25'/>
+							<img src='Images\supprimer.png' width='25'/>
 						</a>
 					</td>
 				</tr>

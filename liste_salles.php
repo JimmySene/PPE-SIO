@@ -33,7 +33,7 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 			
 			if($i%2==0) echo "<tr bgcolor='#ffffff'>"; else echo "<tr>"; ?>
 			
-					<td><img src="images/salles/<?=htmlspecialchars($salle["id"])?>.jpg" alt="<?=htmlspecialchars($salle["nom"])?>" width="100"/></td>
+					<td><img src="Images/salles/<?=htmlspecialchars($salle["id"])?>.jpg" alt="<?=htmlspecialchars($salle["nom"])?>" width="100"/></td>
 					<td><?=htmlspecialchars($salle["nom"])?></td>
 					<td><?=htmlspecialchars($salle["description"])?></td>
 					<td><?=htmlspecialchars($salle["adresse"])?></td>
@@ -43,12 +43,12 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
                     <td><?=htmlspecialchars($salle["disponibilite"])?></td>
 					<td>
 						<a href="modif_salle.php?id=<?=$salle["id"]?>">
-							<img src="images\modif.png" width="25" />
+							<img src="Images\modif.png" width="25" />
 						</a>
 					</td>
 					<td>
 						<a href="sup_salle.php?id=<?=$salle["id"]?>">
-							<img src="images\supprimer.png" width="25" />
+							<img src="Images\supprimer.png" width="25" />
 						</a>
 					</td>
 				

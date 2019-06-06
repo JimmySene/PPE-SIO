@@ -17,7 +17,7 @@ if(isset($_SESSION['login'])){ // On vérifie que l'utilisateur est connecté
         for($i=0;$i<$nbProduits;$i++)
         { ?>
         <tr data-id="<?=$i?>">
-            <td><img src="images/produits/<?=$_SESSION['panier']['id'][$i]?>.jpg" alt="" width="100" height="100" /> <?=$_SESSION['panier']['nom'][$i]?></td>
+            <td><img src="Images/produits/<?=$_SESSION['panier']['id'][$i]?>.jpg" alt="" width="100" height="100" /> <?=$_SESSION['panier']['nom'][$i]?></td>
             <td><?=$_SESSION['panier']['prix'][$i]?>€</td>
             <td><?=$_SESSION['panier']['quantite'][$i]?></td>
             <td><a href="sup_panier.php?id=<?=$i?>"><img src="images/supprimer.png" class="supprimer" alt="supprimer" width="50"/></a></td>

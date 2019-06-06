@@ -30,19 +30,19 @@ if(verif_admin()) { // Si l'utilisateur est admin alors affiche le panneau d'adm
 			
 			if($i%2==0) echo "<tr bgcolor='#ffffff'>"; else echo "<tr>"; ?>
 			
-					<td><img src="images/produits/<?=htmlspecialchars($produit["produit_id"])?>.jpg" alt="<?=htmlspecialchars($produit["produit_nom"])?>" width="100"/></td>
+					<td><img src="Images/produits/<?=htmlspecialchars($produit["produit_id"])?>.jpg" alt="<?=htmlspecialchars($produit["produit_nom"])?>" width="100"/></td>
 					<td><?=htmlspecialchars($produit["produit_nom"])?></td>
 					<td><?=htmlspecialchars($produit["prix"])?></td>
 					<td><?=htmlspecialchars($produit["categorie_nom"])?></td>
 					<td><?=htmlspecialchars($produit["marque_nom"])?></td>
 					<td>
 						<a href="modif_produit.php?id=<?=$produit["produit_id"]?>">
-							<img src="images\modif.png" width="25" />
+							<img src="Images\modif.png" width="25" />
 						</a>
 					</td>
 					<td>
 						<a href="sup_produit.php?id=<?=$produit["produit_id"]?>">
-							<img src="images\supprimer.png" width="25" />
+							<img src="Images\supprimer.png" width="25" />
 						</a>
 					</td>
 				

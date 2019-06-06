@@ -29,7 +29,7 @@ include('fonctions.php'); ?>
             }
             while($donnees = mysqli_fetch_assoc($data)) { ?>
                 <div class="card col-12 col-md-6 col-lg-4 ">
-                    <img class="card-img-top" src="images/produits/<?=$donnees['produit_id']?>.jpg" alt="photo <?=$donnees['produit_nom']?>" />
+                    <img class="card-img-top" src="Images/produits/<?=$donnees['produit_id']?>.jpg" alt="photo <?=$donnees['produit_nom']?>" />
                     <div class="card-body">
                         <p class="card-title "><strong><?=$donnees['produit_nom']?></strong></p>
                         <p><small><?php if($donnees['marque_id'] != 1) echo $donnees['marque_nom']; else { echo '<br />'; }?></small></p>

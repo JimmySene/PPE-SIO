@@ -10,7 +10,7 @@ include('fonctions.php'); ?>
     while($salle = mysqli_fetch_assoc($data)) { // Affichage des salles 
     $txt_dispo = "Réserver la salle"?>
         <div class="card cols-6" style="width:500px;margin:15px;">
-            <img src="images/salles/<?= $salle['id'] ?>.jpg" alt="plan salle" class="card-img-top" />
+            <img src="Images/salles/<?= $salle['id'] ?>.jpg" alt="plan salle" class="card-img-top" />
             <div class="card-body">
                 <h2 class="card-title"><?= $salle['nom'] ?></h2>
             
